@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const BASEURL = process.env.BASEURL;
 const mongoose = require("mongoose");
 const ProductsRoutes = require("./product/product.router");
 const UserRouter = require("./User/user.router");
@@ -19,5 +20,5 @@ app.listen(8000, async () => {
   await mongoose.connect(
     "mongodb+srv://khushhal:dk35@cluster0.m4pqa2o.mongodb.net/megastore"
   );
-  console.log("http://localhost:8000");
+  console.log(BASEURL);
 });
